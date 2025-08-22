@@ -24,15 +24,14 @@
       background: #0b1020;
     }
     /* Full-bleed background image (poster) with a soft overlay for contrast */
-    body::before {
-      content: "";
-      position: sticky;
-      inset: 0;
-      background:
-        linear-gradient(var(--overlay), var(--overlay)),
-        url("assets/poster.jpeg") center / cover no-repeat;
-      z-index: -1; /* behind all content */
-      transform: translateZ(0); /* avoid repaint jank on mobile */
+    body {
+        background:
+            linear-gradient(var(--overlay), var(--overlay)),
+            url("assets/poster.jpeg") center / cover no-repeat;
+        background-attachment: scroll; /* default, moves with page */
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        color: var(--text);
     }
 
     header, footer {
